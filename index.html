@@ -10,3 +10,9 @@
   <p>Ce site est en cours de création. Revenez bientôt !</p>
 </body>
 </html>
+
+<script>
+  if (location.protocol !== 'https:') {
+    location.replace(`https://${location.hostname}${location.pathname}${location.search}`);
+  }
+</script>
