@@ -2,16 +2,32 @@
 <html lang="fr">
 <head>
 
-<!-- Google Tag Manager -->
-<script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id=GTM-PPDM5X6R'+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PPDM5X6R');
-</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Consent Mode + GTM initialisation -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PPDM5X6R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
 
+    // Consentement par défaut (avant acceptation)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
+
+    // Initialisation de GTM
+    gtag('js', new Date());
+    gtag('config', 'GTM-PPDM5X6R');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PPDM5X6R'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPDM5X6R');
+  </script>
+  <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8">
   <title>Pilote Virtuel – Automatisation de la création visuelle</title>
@@ -33,22 +49,16 @@
 
   <link rel="stylesheet" href="style.css">
 
-
 </head>
-
-
-  
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPDM5X6R"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPDM5X6R"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-
-  
   <header>
     <h1>Bienvenue sur Pilote Virtuel</h1>
     <p>Explorez l'automatisation graphique à travers des scripts créatifs et des interfaces intelligentes pour générer des visuels dynamiques.</p>
@@ -94,5 +104,17 @@
       location.replace(`https://${location.hostname}${location.pathname}${location.search}`);
     }
   </script>
+
+  <!-- Script à déclencher après consentement utilisateur -->
+  <script>
+    // Exemple : à insérer dans ton gestionnaire de consentement
+    // Appelle ce script quand l'utilisateur clique sur "Accepter"
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'analytics_storage': 'granted'
+    });
+  </script>
+
 </body>
 </html>
+
